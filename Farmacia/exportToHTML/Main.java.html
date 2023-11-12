@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #cf8e6d;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">import </span><span class="s0">java</span><span class="s2">.</span><span class="s0">util</span><span class="s2">.</span><span class="s0">ArrayList</span><span class="s2">;</span>
+<span class="s1">import </span><span class="s0">java</span><span class="s2">.</span><span class="s0">util</span><span class="s2">.</span><span class="s0">Scanner</span><span class="s2">;</span>
+<span class="s1">public class </span><span class="s0">Main </span><span class="s2">{</span>
+    <span class="s1">static </span><span class="s0">ArrayList</span><span class="s2">&lt;</span><span class="s0">Medicamento</span><span class="s2">&gt; </span><span class="s0">rep </span><span class="s2">= </span><span class="s1">new </span><span class="s0">ArrayList</span><span class="s2">&lt;</span><span class="s0">Medicamento</span><span class="s2">&gt;();</span>
+    <span class="s1">public static void </span><span class="s0">main</span><span class="s2">(</span><span class="s0">String</span><span class="s2">[] </span><span class="s0">args</span><span class="s2">) {</span>
+        <span class="s1">int </span><span class="s0">opcao </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+        <span class="s0">Scanner sc </span><span class="s2">=  </span><span class="s1">new </span><span class="s0">Scanner</span><span class="s2">(</span><span class="s0">System</span><span class="s2">.</span><span class="s0">in</span><span class="s2">);</span>
+        <span class="s1">while </span><span class="s2">(</span><span class="s0">opcao </span><span class="s2">!=</span><span class="s3">9 </span><span class="s2">) {</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;</span><span class="s1">\n</span><span class="s4">Sistema Farmacêutico ALL</span><span class="s1">\n</span><span class="s4">&quot;</span><span class="s2">);</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite sua opção.&quot;</span><span class="s2">);</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;1 - Cadastrar Medicamento&quot;</span><span class="s2">);</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;2 - Consultar Medicamento&quot;</span><span class="s2">);</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;3 - Alterar Medicamento&quot;</span><span class="s2">);</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;4 - Remover Medicamento&quot;</span><span class="s2">);</span>
+
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;9 - Sair do Sistema&quot;</span><span class="s2">);</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Sua opção: &quot;</span><span class="s2">);</span>
+            <span class="s0">opcao </span><span class="s2">= </span><span class="s0">sc</span><span class="s2">.</span><span class="s0">nextInt</span><span class="s2">();</span>
+
+            <span class="s1">switch </span><span class="s2">(</span><span class="s0">opcao</span><span class="s2">)  {</span>
+                <span class="s1">case </span><span class="s3">1</span><span class="s2">:</span>
+                    <span class="s0">inserirMedicamento</span><span class="s2">();</span>
+                    <span class="s1">break</span><span class="s2">;</span>
+                <span class="s1">case </span><span class="s3">2</span><span class="s2">:</span>
+                    <span class="s0">consultarMedicamento</span><span class="s2">();</span>
+                    <span class="s1">break</span><span class="s2">;</span>
+                <span class="s1">case </span><span class="s3">3</span><span class="s2">:</span>
+                    <span class="s0">alterarMedicamento</span><span class="s2">();</span>
+                    <span class="s1">break</span><span class="s2">;</span>
+                <span class="s1">case </span><span class="s3">4</span><span class="s2">:</span>
+                    <span class="s0">removerMedicamento</span><span class="s2">();</span>
+                    <span class="s1">break</span><span class="s2">;</span>
+            <span class="s2">}</span>
+            <span class="s1">try </span><span class="s2">{     </span><span class="s0">Thread</span><span class="s2">.</span><span class="s0">sleep</span><span class="s2">(</span><span class="s3">5000</span><span class="s2">);  }</span>
+
+
+
+            <span class="s1">catch</span><span class="s2">(</span><span class="s0">Exception e</span><span class="s2">)  {   </span><span class="s0">e</span><span class="s2">.</span><span class="s0">printStackTrace</span><span class="s2">(); }</span>
+        <span class="s2">}</span>
+        <span class="s5">// encerramento do programa...</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Tchau...&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s1">public static void </span><span class="s0">consultarMedicamento</span><span class="s2">()  {</span>
+        <span class="s0">Scanner s </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Scanner</span><span class="s2">(</span><span class="s0">System</span><span class="s2">.</span><span class="s0">in</span><span class="s2">);</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o id do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s1">int </span><span class="s0">id </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">nextInt</span><span class="s2">();</span>
+        <span class="s1">boolean </span><span class="s0">encontrado </span><span class="s2">= </span><span class="s1">false</span><span class="s2">;</span>
+        <span class="s1">for </span><span class="s2">(</span><span class="s1">int </span><span class="s0">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s0">i </span><span class="s2">&lt; </span><span class="s0">rep</span><span class="s2">.</span><span class="s0">size</span><span class="s2">(); </span><span class="s0">i</span><span class="s2">++) {</span>
+            <span class="s0">Medicamento c </span><span class="s2">= </span><span class="s0">rep</span><span class="s2">.</span><span class="s0">get</span><span class="s2">(</span><span class="s0">i</span><span class="s2">);</span>
+            <span class="s1">if </span><span class="s2">(</span><span class="s0">c</span><span class="s2">.</span><span class="s0">getId</span><span class="s2">() == (</span><span class="s0">id</span><span class="s2">)) {</span>
+                <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Dados do Medicamento: &quot;</span><span class="s2">);</span>
+                <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Id do Medicamento: &quot; </span><span class="s2">+ </span><span class="s0">c</span><span class="s2">.</span><span class="s0">getId</span><span class="s2">());</span>
+                <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Nome do Medicamento: &quot; </span><span class="s2">+ </span><span class="s0">c</span><span class="s2">.</span><span class="s0">getNome</span><span class="s2">());</span>
+                <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Valor do Medicamento: &quot; </span><span class="s2">+ </span><span class="s0">c</span><span class="s2">.</span><span class="s0">getValor</span><span class="s2">() + </span><span class="s4">&quot;R$&quot;</span><span class="s2">);</span>
+                <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Quantidade em estoque:&quot; </span><span class="s2">+ </span><span class="s0">c</span><span class="s2">.</span><span class="s0">getQtd</span><span class="s2">());</span>
+                <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Descrição: &quot; </span><span class="s2">+ </span><span class="s0">c</span><span class="s2">.</span><span class="s0">getDescricao</span><span class="s2">());</span>
+                <span class="s0">encontrado </span><span class="s2">= </span><span class="s1">true</span><span class="s2">;</span>
+                <span class="s1">break</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s1">if </span><span class="s2">(!</span><span class="s0">encontrado</span><span class="s2">) {</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Medicamento não localizado&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+    <span class="s1">public static void </span><span class="s0">inserirMedicamento</span><span class="s2">() {</span>
+        <span class="s1">int </span><span class="s0">id</span><span class="s2">, </span><span class="s0">qtd</span><span class="s2">;</span>
+        <span class="s0">String nome</span><span class="s2">, </span><span class="s0">descricao</span><span class="s2">;</span>
+        <span class="s0">Scanner s </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Scanner</span><span class="s2">(</span><span class="s0">System</span><span class="s2">.</span><span class="s0">in</span><span class="s2">);</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o id do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s0">id </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">nextInt</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o nome do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s0">nome </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">next</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o valor do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s1">double </span><span class="s0">valor </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">nextDouble</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite a quantidade de Medicamento em estoque:&quot;</span><span class="s2">);</span>
+        <span class="s0">qtd </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">nextInt</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite a descrição do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s0">descricao </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">next</span><span class="s2">();</span>
+        <span class="s0">Medicamento c </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Medicamento </span><span class="s2">(</span><span class="s0">id</span><span class="s2">, </span><span class="s0">nome</span><span class="s2">, </span><span class="s0">valor</span><span class="s2">, </span><span class="s0">qtd</span><span class="s2">, </span><span class="s0">descricao</span><span class="s2">);</span>
+        <span class="s1">if </span><span class="s2">(</span><span class="s0">rep</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">c</span><span class="s2">))</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Medicamento inserido com sucesso.&quot;</span><span class="s2">);</span>
+        <span class="s1">else</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;O medicamento não pôde ser inserido, o repositório pode estar cheio ou esse medicamento já existe no sistema&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s1">public static void </span><span class="s0">alterarMedicamento</span><span class="s2">()  {</span>
+        <span class="s1">int </span><span class="s0">id</span><span class="s2">, </span><span class="s0">qtd</span><span class="s2">;</span>
+        <span class="s0">String nome</span><span class="s2">, </span><span class="s0">descricao </span><span class="s2">;</span>
+        <span class="s0">Scanner s </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Scanner</span><span class="s2">(</span><span class="s0">System</span><span class="s2">.</span><span class="s0">in</span><span class="s2">);</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o id do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s0">id </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">nextInt</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o nome do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s0">nome </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">next</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o valor do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s1">double </span><span class="s0">valor </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">nextDouble</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite a quantidade de Medicamento em estoque:&quot;</span><span class="s2">);</span>
+        <span class="s0">qtd </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">nextInt</span><span class="s2">();</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite a descrição do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s0">descricao </span><span class="s2">= </span><span class="s0">s</span><span class="s2">.</span><span class="s0">next</span><span class="s2">();</span>
+        <span class="s0">Medicamento c </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Medicamento</span><span class="s2">(</span><span class="s0">id</span><span class="s2">, </span><span class="s0">nome</span><span class="s2">, </span><span class="s0">valor</span><span class="s2">, </span><span class="s0">qtd</span><span class="s2">, </span><span class="s0">descricao</span><span class="s2">);</span>
+        <span class="s1">boolean </span><span class="s0">encontrado </span><span class="s2">= </span><span class="s1">false</span><span class="s2">;</span>
+        <span class="s1">for </span><span class="s2">(</span><span class="s1">int </span><span class="s0">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s0">i </span><span class="s2">&lt; </span><span class="s0">rep</span><span class="s2">.</span><span class="s0">size</span><span class="s2">(); </span><span class="s0">i</span><span class="s2">++) {</span>
+            <span class="s0">Medicamento c2 </span><span class="s2">= </span><span class="s0">rep</span><span class="s2">.</span><span class="s0">get</span><span class="s2">(</span><span class="s0">i</span><span class="s2">);</span>
+            <span class="s1">if </span><span class="s2">(</span><span class="s0">c2</span><span class="s2">.</span><span class="s0">getId</span><span class="s2">() == (</span><span class="s0">id</span><span class="s2">)) {</span>
+                <span class="s0">rep</span><span class="s2">.</span><span class="s0">remove</span><span class="s2">(</span><span class="s0">i</span><span class="s2">);</span>
+                <span class="s0">rep</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">c</span><span class="s2">);</span>
+                <span class="s0">encontrado </span><span class="s2">= </span><span class="s1">true</span><span class="s2">;</span>
+                <span class="s1">break</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s1">if </span><span class="s2">(!</span><span class="s0">encontrado</span><span class="s2">) {</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Medicamento não localizado&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s1">else</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot; Medicamento alterado.&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s1">public static void </span><span class="s0">removerMedicamento</span><span class="s2">()  {</span>
+        <span class="s0">Scanner sc </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Scanner</span><span class="s2">(</span><span class="s0">System</span><span class="s2">.</span><span class="s0">in</span><span class="s2">);</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Digite o id do Medicamento:&quot;</span><span class="s2">);</span>
+        <span class="s1">int </span><span class="s0">id </span><span class="s2">= </span><span class="s0">sc</span><span class="s2">.</span><span class="s0">nextInt</span><span class="s2">();</span>
+        <span class="s1">boolean </span><span class="s0">encontrado </span><span class="s2">= </span><span class="s1">false</span><span class="s2">;</span>
+
+        <span class="s1">for </span><span class="s2">(</span><span class="s1">int </span><span class="s0">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s0">i </span><span class="s2">&lt; </span><span class="s0">rep</span><span class="s2">.</span><span class="s0">size</span><span class="s2">(); </span><span class="s0">i</span><span class="s2">++) {</span>
+            <span class="s0">Medicamento c </span><span class="s2">= </span><span class="s0">rep</span><span class="s2">.</span><span class="s0">get</span><span class="s2">(</span><span class="s0">i</span><span class="s2">);</span>
+            <span class="s1">if </span><span class="s2">(</span><span class="s0">c</span><span class="s2">.</span><span class="s0">getId</span><span class="s2">() == (</span><span class="s0">id</span><span class="s2">)) {</span>
+                <span class="s0">rep</span><span class="s2">.</span><span class="s0">remove</span><span class="s2">(</span><span class="s0">i</span><span class="s2">);</span>
+                <span class="s0">encontrado </span><span class="s2">= </span><span class="s1">true</span><span class="s2">;</span>
+                <span class="s1">break</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s1">if </span><span class="s2">(!</span><span class="s0">encontrado</span><span class="s2">) {</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Medicamento não localizado&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s1">else </span><span class="s2">{</span>
+            <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Medicamento removido.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+    <span class="s1">public static class </span><span class="s0">Medicamento </span><span class="s2">{</span>
+        <span class="s1">private int </span><span class="s0">id</span><span class="s2">;</span>
+        <span class="s1">private </span><span class="s0">String nome</span><span class="s2">;</span>
+        <span class="s1">private double </span><span class="s0">valor</span><span class="s2">;</span>
+        <span class="s1">private int </span><span class="s0">qtd</span><span class="s2">;</span>
+        <span class="s1">private </span><span class="s0">String descricao</span><span class="s2">;</span>
+
+
+        <span class="s1">public </span><span class="s0">Medicamento</span><span class="s2">(</span><span class="s1">int </span><span class="s0">id</span><span class="s2">, </span><span class="s0">String nome</span><span class="s2">, </span><span class="s1">double </span><span class="s0">valor</span><span class="s2">, </span><span class="s1">int </span><span class="s0">qtd</span><span class="s2">, </span><span class="s0">String descricao</span><span class="s2">) {</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">id </span><span class="s2">= </span><span class="s0">id</span><span class="s2">;</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">nome </span><span class="s2">= </span><span class="s0">nome</span><span class="s2">;</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">valor </span><span class="s2">= </span><span class="s0">valor</span><span class="s2">;</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">qtd </span><span class="s2">= </span><span class="s0">qtd</span><span class="s2">;</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">descricao </span><span class="s2">= </span><span class="s0">descricao</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public </span><span class="s0">String getNome</span><span class="s2">() {</span>
+            <span class="s1">return </span><span class="s0">nome</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public int </span><span class="s0">getId</span><span class="s2">() {</span>
+            <span class="s1">return </span><span class="s0">id</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public double </span><span class="s0">getValor</span><span class="s2">() {</span>
+            <span class="s1">return </span><span class="s0">valor</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public int </span><span class="s0">getQtd</span><span class="s2">() {</span>
+            <span class="s1">return </span><span class="s0">qtd</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public </span><span class="s0">String getDescricao</span><span class="s2">() {</span>
+            <span class="s1">return </span><span class="s0">descricao</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public void </span><span class="s0">setNome</span><span class="s2">(</span><span class="s0">String nome</span><span class="s2">) {</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">nome </span><span class="s2">= </span><span class="s0">nome</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public void </span><span class="s0">setId</span><span class="s2">(</span><span class="s1">int </span><span class="s0">id</span><span class="s2">) {</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">id </span><span class="s2">= </span><span class="s0">id</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public void </span><span class="s0">setValor</span><span class="s2">(</span><span class="s1">double </span><span class="s0">valor</span><span class="s2">) {</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">valor </span><span class="s2">= </span><span class="s0">valor</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public void </span><span class="s0">setDescricao</span><span class="s2">(</span><span class="s0">String descricao</span><span class="s2">){</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">descricao </span><span class="s2">= </span><span class="s0">descricao</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">public void </span><span class="s0">setQtd </span><span class="s2">(</span><span class="s1">int </span><span class="s0">qtd</span><span class="s2">){</span>
+            <span class="s1">this</span><span class="s2">.</span><span class="s0">qtd </span><span class="s2">= </span><span class="s0">qtd</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+</pre>
+</body>
+</html>
