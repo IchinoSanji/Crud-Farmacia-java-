@@ -1,8 +1,8 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
+import entities.Medicamento;
 public class Main {
-    static ArrayList<Medicamento> rep = new ArrayList<Medicamento>();
+    static ArrayList<Medicamento> rep = new ArrayList<>();
     public static void main(String[] args) {
         int opcao = 0;
         Scanner sc =  new Scanner(System.in);
@@ -13,6 +13,7 @@ public class Main {
             System.out.println("2 - Consultar Medicamento");
             System.out.println("3 - Alterar Medicamento");
             System.out.println("4 - Remover Medicamento");
+            System.out.println("5 - Mostrar medicamentos");
 
             System.out.println("9 - Sair do Sistema");
             System.out.println("Sua opção: ");
@@ -31,6 +32,9 @@ public class Main {
                 case 4:
                     removerMedicamento();
                     break;
+                case 5:
+                    mostrarMedicamentos();
+                    break;
             }
             try {     Thread.sleep(5000);  }
 
@@ -46,8 +50,7 @@ public class Main {
         System.out.println("Digite o id do Medicamento:");
         int id = s.nextInt();
         boolean encontrado = false;
-        for (int i = 0; i < rep.size(); i++) {
-            Medicamento c = rep.get(i);
+        for (Medicamento c : rep) {
             if (c.getId() == (id)) {
                 System.out.println("Dados do Medicamento: ");
                 System.out.println("Id do Medicamento: " + c.getId());
@@ -82,7 +85,7 @@ public class Main {
             System.out.println("Medicamento inserido com sucesso.");
         else
             System.out.println("O medicamento não pôde ser inserido, o repositório pode estar cheio ou esse medicamento já existe no sistema");
-        }
+    }
     public static void alterarMedicamento()  {
         int id, qtd;
         String nome, descricao ;
@@ -135,51 +138,21 @@ public class Main {
             System.out.println("Medicamento removido.");
         }
     }
-    public static class Medicamento {
-        private int id;
-        private String nome;
-        private double valor;
-        private int qtd;
-        private String descricao;
 
-
-        public Medicamento(int id, String nome, double valor, int qtd, String descricao) {
-            this.id = id;
-            this.nome = nome;
-            this.valor = valor;
-            this.qtd = qtd;
-            this.descricao = descricao;
-        }
-        public String getNome() {
-            return nome;
-        }
-        public int getId() {
-            return id;
-        }
-        public double getValor() {
-            return valor;
-        }
-        public int getQtd() {
-            return qtd;
-        }
-        public String getDescricao() {
-            return descricao;
-        }
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-        public void setId(int id) {
-            this.id = id;
-        }
-        public void setValor(double valor) {
-            this.valor = valor;
-        }
-        public void setDescricao(String descricao){
-            this.descricao = descricao;
-        }
-        public void setQtd (int qtd){
-            this.qtd = qtd;
+    public static void mostrarMedicamentos(){
+        if (rep.isEmpty()) {
+            System.out.println("Não há nenhum medicamento cadastrado");
+        } else {
+            System.out.println("Lista de médicamentos\n");
+            for (Medicamento medicamento: rep){
+                System.out.println("Id do Medicamento: " + medicamento.getId());
+                System.out.println("Nome do Medicamento: " + medicamento.getNome());
+                System.out.println("Valor do Medicamento: " + medicamento.getValor() + "R$");
+                System.out.println("Quantidade em estoque: " + medicamento.getQtd());
+                System.out.println("Descrição: " + medicamento.getDescricao());
+                System.out.println("------------------------");
+            }
         }
     }
-}
 
+}
